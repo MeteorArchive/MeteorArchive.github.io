@@ -22,7 +22,11 @@ $(function () {
         }
     });
 
+    //===== Versions
 
+    $(window).on('load', function() {
+        
+    })
 
     //===== Section Menu Active
 
