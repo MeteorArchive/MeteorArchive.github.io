@@ -22,7 +22,23 @@ $(function () {
         }
     });
 
+    //===== Versions
 
+    $(window).on('load', function() {
+        $.get("https://files-server.meteor2.repl.co/files/versions", function(data, status) {
+            Object.keys(data).sort().reverse().forEach((ver)=>{
+                let optgrp = document.createElement("optgroup")
+                optgrp.label = ver
+                data[ver].sort().reverse().forEach((cliVer)=>{
+                    let opt = document.createElement("option")
+                    opt.innerText = cliVer
+                    opt.value = `https://files-server.meteor2.repl.co/files/meteor-client-${cliVer}-${ver}.jar`
+                    optgrp.appendChild(opt)
+                })
+                document.getElementById("version").appendChild(optgrp)
+            })
+        })
+    })
 
     //===== Section Menu Active
 
