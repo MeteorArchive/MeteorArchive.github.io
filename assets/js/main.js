@@ -26,7 +26,7 @@ $(function () {
 
     $(window).on('load', function() {
         $.get("https://files-server.meteor2.repl.co/files/versions", function(data, status) {
-            window.alert(data)
+            window.alert(JSON.stringify(data))
         })
     })
 
